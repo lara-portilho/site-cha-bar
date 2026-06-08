@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Pinyon+Script&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-cursive: "Pinyon Script", cursive;
+  --font-serif: "EB Garamond", serif;
+  --color-blush: #d19199;
+  --color-midnight: #11114e;
+  --color-off: #f7f6f4;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  font-size: large;
+}
+
+html {
+  scroll-behavior: smooth;
+}
