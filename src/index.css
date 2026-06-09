@@ -1,31 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Pinyon+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-cursive: "Pinyon Script", cursive;
-  --font-serif: "EB Garamond", serif;
-  --color-blush: #d19199;
-  --color-midnight: #11114e;
-  --color-off: #f7f6f4;
+  --font-detail: "Bakerie", cursive;
+  --color-pale: #eddad1;
+  --color-brown: #a65a2e;
+  --color-off: #fffbf9;
 }
 
-.perspective {
-  perspective: 1000px;
-}
-
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
+@font-face {
+  font-family: "Bakerie";
+  src: url("assets/bakerie.otf");
 }
 
 body {
-  font-family: "EB Garamond", serif;
+  font-family: "Ruda", sans-serif;
   font-size: large;
+  position: relative;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.leaflet-control {
+  z-index: 0 !important;
+}
+.leaflet-pane {
+  z-index: 0 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
 }
