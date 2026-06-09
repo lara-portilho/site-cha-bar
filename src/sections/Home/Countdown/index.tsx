@@ -26,5 +26,5 @@ export function Countdown() {
     return `${days} dias, ${hours} horas ${minutes} minutos, ${seconds} segundos`;
   };
 
-  return <p className="text-xl">{formatTime(timeLeft)}</p>;
+  return <p>{formatTime(timeLeft)}</p>;
 }
