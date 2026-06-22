@@ -3,9 +3,26 @@ import { useModalContext } from "@contexts/ModalContext";
 import type { Presente } from "@entities/Presente";
 import cn from "classnames";
 
+const presenteImages = import.meta.glob<string>(
+  "../../../assets/presentes/*.webp",
+  {
+    eager: true,
+    import: "default",
+    query: "?url",
+  },
+);
+
+const presenteImageUrls = Object.fromEntries(
+  Object.entries(presenteImages).map(([path, src]) => [
+    path.split("/").pop(),
+    src,
+  ]),
+);
+
 export function CardPresente(presente: Presente) {
   const { setOpen, setPresente } = useModalContext();
   const esgotado = presente.restantes === 0;
+  const imageSrc = presenteImageUrls[presente.imagem];
 
   function onSelectPresente() {
     setOpen(true);
@@ -15,7 +32,7 @@ export function CardPresente(presente: Presente) {
   return (
     <div className="flex w-32 shrink-0 flex-col items-center justify-between rounded-lg bg-white px-2 py-3 shadow-lg md:w-56">
       <img
-        src={`src/assets/presentes/${presente.imagem}`}
+        src={imageSrc}
         alt={presente.nome}
         className={cn(
           "aspect-square size-20 rounded-lg object-contain md:size-44",
