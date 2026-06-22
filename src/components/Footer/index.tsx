@@ -4,7 +4,7 @@ export function Footer() {
       Este site foi programado pela noiva! Caso queira mais informações sobre o
       código,{" "}
       <a
-        href="https://github.com/lara-portilho/site-casamento"
+        href="https://github.com/lara-portilho/site-cha-bar"
         className="underline"
         target="_blank"
         rel="noopener noreferrer"

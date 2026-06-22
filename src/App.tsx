@@ -1,3 +1,4 @@
+import pot from "@assets/pot.png";
 import { Divider } from "@components/Divider";
 import { Footer } from "@components/Footer";
 import { useWindowDimensions } from "@hooks/useWindowDimensions";
@@ -6,7 +7,6 @@ import { ListaPresentes } from "@sections/ListaPresentes";
 import { Localizacao } from "@sections/Localizacao";
 import cn from "classnames";
 import { ToastContainer } from "react-toastify";
-import pot from "./assets/pot.png";
 
 function App() {
   const { height, width } = useWindowDimensions();

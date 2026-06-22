@@ -1,19 +1,31 @@
+import { db } from "@app/firebase";
 import { Button } from "@components/Button";
 import { useModalContext } from "@contexts/ModalContext";
+import { doc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import { FaX } from "react-icons/fa6";
 import Modal from "react-modal";
 import { toast } from "react-toastify";
 
-export function ModalNome() {
+type ModalNomeProps = {
+  onMarcarPresente(id: string, comprador: string): void;
+};
+
+export function ModalNome({ onMarcarPresente }: ModalNomeProps) {
   const { presente, open, setPresente, setOpen } = useModalContext();
   const [nome, setNome] = useState("");
 
-  function onSubmit() {
+  async function onSubmit() {
     try {
-      console.log(presente);
+      if (!presente) throw new Error("Não existe presente selecionado!");
+      const ref = doc(db, "presentes-chabar", presente.id);
+      await updateDoc(ref, {
+        restantes: presente.restantes - 1,
+        compradoPor: [...presente.compradoPor, nome],
+      });
       setOpen(false);
       setNome("");
+      onMarcarPresente(presente.id, nome);
       toast.success("Presente marcado com sucesso!");
     } catch (err) {
       console.log(err);
