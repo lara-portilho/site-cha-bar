@@ -1,3 +1,5 @@
+import flowerGreen from "@assets/flower-green.png";
+import flowerOrange from "@assets/flower-orange.png";
 import pot from "@assets/pot.png";
 import { Divider } from "@components/Divider";
 import { Footer } from "@components/Footer";
@@ -26,7 +28,11 @@ function App() {
       <div className="relative mx-auto max-w-300 shadow-2xl">
         <Divider />
         <div className="bg-off flex flex-col py-4">
-          <img src={pot} className="mx-auto mt-5 w-50" />
+          <div className="flex justify-evenly">
+            <img src={flowerGreen} className="h-28 w-auto md:h-40" />
+            <img src={pot} className="h-28 w-auto md:h-40" />
+            <img src={flowerOrange} className="h-28 w-auto md:h-40" />
+          </div>
           <Localizacao />
           <ListaPresentes />
           <Footer />

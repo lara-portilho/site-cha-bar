@@ -3,9 +3,10 @@
 
 @theme {
   --font-detail: "Bakerie", cursive;
-  --color-pale: #eddad1;
-  --color-brown: #a65a2e;
-  --color-off: #fffbf9;
+  --color-off: #fff3eb;
+  --color-detail-orange: #ff6025;
+  --color-detail-green: #0f901c;
+  --color-text-brown: #8a4016;
 }
 
 @font-face {
@@ -15,6 +16,7 @@
 
 body {
   font-family: "Ruda", sans-serif;
+  color: #8a4016;
   font-size: large;
   position: relative;
 }
